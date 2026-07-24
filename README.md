@@ -1,5 +1,6 @@
 # Loja de Games - Cogumelo Store
 ## Trabalho de TI, com o tema de loja de games.
+https://drive.google.com/file/d/1PsGjlXYfzifuEPeF1QpBglFfRjvIc7-7/view?usp=sharing
 ### Permissões do CLiente:
 navegar pelo site , colocar item no carrinho , finalizar compras ,  informar seu endereço , preencher dados de pagamento com cartão de crédito e débito.
 ### Permissão do Sistema: 
