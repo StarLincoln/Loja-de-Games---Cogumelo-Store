@@ -1,0 +1,25 @@
+{
+  "name": "loja-de-games-cogumelo-store",
+  "version": "1.0.0",
+  "description": "loja voltada para a venda de jogos",
+  "homepage": "https://github.com/StarLincoln/Loja-de-Games---Cogumelo-Store",
+  "bugs": {
+    "url": "https://github.com/StarLincoln/Loja-de-Games---Cogumelo-Store/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StarLincoln/Loja-de-Games---Cogumelo-Store.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^7.0.2"
+  }
+}
