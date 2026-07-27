@@ -1,0 +1,67 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.bg-home {
+    background: url('https://unsplash.com') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-login {
+    background: #222;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-centro {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.container-centro h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.card-login {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+}
+
+button, input {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+input {
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #ff4757;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #e84118;
+}
