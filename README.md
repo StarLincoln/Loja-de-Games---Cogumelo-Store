@@ -10,13 +10,12 @@
 | Rafael Azafe Fonseca de Paiva | QA/Testes |
 
 ### Tecnologias Utilizadas
-| Áreas | | Tecnoligas |
+| Áreas | Tecnoligas |
 | :---------- | -----: |
-| Front-End | | HTML, CSS, JavaScript, EJS, Multer |
-| Back-End | | TypeScript, Express, JSON, Jest, Bcrypt |
-| Banco de Dados | | JSON |
-| Versionamento | |GitHub, Git |
-
+| Front-End | HTML, CSS, JavaScript, EJS, Multer |
+| Back-End | TypeScript, Express, JSON, Jest, Bcrypt |
+| Banco de Dados | JSON |
+| Versionamento | GitHub, Git |
 ### Como Exetucar 
 DESENVOLVIMENTO
 
