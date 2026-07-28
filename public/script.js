@@ -9,7 +9,7 @@ if (btnIrLogin) {
 const btnAutenticar = document.getElementById('btnAutenticar');
 if (btnAutenticar) {
     btnAutenticar.addEventListener('click', () => {
-        alert('Login feito com sucesso! Entrando na loja...');
+        alert('Login realizando Entrando na loja');
         window.location.href = 'https://google.com'; 
     });
 }
