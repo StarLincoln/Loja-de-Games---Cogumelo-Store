@@ -17,36 +17,36 @@ export class jsonRepositories <T extends IEntidade> {
         await writeFile(this.arquivo, JSON.stringify(dados, null, 2))
     }
 
-    private async listarTodos(){
+    public async listarTodos(): Promise<T[]>{
         return this.carregar()
     }
-    private async buscarPorId(id: number): Promise<T | undefined>{
+    public async buscarPorId(id: number): Promise<T | void > {
         const dados: T[] = await this.carregar()
         const index = dados.findIndex(i => i.id === id)
 
-        if(index === -1) return undefined
+        if(index === -1) throw new Error("Id Inválido")
 
         return dados[index]
     }
-    private async criarItem(add: any): Promise<void>{
+    public async criarItem(add: any): Promise<void>{
         const dados: T[] = await this.carregar()
         dados.push(add)
         await this.salvar(dados)
     }
-    private async atualizarItem(id: number, add: any): Promise<void>{
+    public async atualizarItem(id: number, add: any): Promise<void>{
         const dados: T[] = await this.carregar()
         const index = dados.findIndex(i => i.id === id)
 
-        if(index === -1) return undefined
+        if(index === -1) throw new Error("Id Inválido")
         dados[index] = {... dados[index], ...add}
 
         await this.salvar(dados)
     }
-    private async removerItem(id: number): Promise<void>{
+    public async removerItem(id: number): Promise<void>{
         const dados: T[] = await this.carregar()
         const index = dados.findIndex(i => i.id === id)
 
-        if(index === -1) return undefined
+        if(index === -1) throw new Error("Id Inválido")
         dados.splice(index, 1)
 
         await this.salvar(dados)
