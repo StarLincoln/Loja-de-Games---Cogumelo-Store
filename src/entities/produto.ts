@@ -13,7 +13,7 @@ export class Produto implements IEntidade {
   ) {}
 
   get id(): number {
-    return this._id
+    return this._id;
   }
   get nome(): string {
     return this._nome;
@@ -45,14 +45,22 @@ export class Produto implements IEntidade {
     this._lancamento = dado;
   }
   set plataforma(dado: string) {
-    if (!dado || dado.trim() === "") throw new Error("Erro! Preencha o plataforma");
+    if (!dado || dado.trim() === "")
+      throw new Error("Erro! Preencha o plataforma");
     this._plataforma = dado.trim();
   }
   set avaliacao(dado: number | null) {
     this._avaliacao = dado;
   }
-  static fromJson(json: any): Produto{
-    return new Produto(json.id, json.nome, json.preco, json.lancamento, json.plataforma, json.avaliacao ?? null)
+  static fromJson(json: any): Produto {
+    return new Produto(
+      json.id,
+      json.nome,
+      json.preco,
+      json.lancamento,
+      json.plataforma,
+      json.avaliacao ?? null,
+    );
   }
   toJson(): object {
     return {
@@ -61,7 +69,7 @@ export class Produto implements IEntidade {
       preco: this._preco,
       lancamento: this._lancamento,
       plataforma: this._plataforma,
-      avaliacao: this._avaliacao
-    }
+      avaliacao: this._avaliacao,
+    };
   }
 }
