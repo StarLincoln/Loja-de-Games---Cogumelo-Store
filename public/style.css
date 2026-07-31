@@ -23,45 +23,35 @@
 }
 
 .bg-login{
-    background:
-        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
-        url("planodefundo.jpeg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    height:100vh;
-
+    width: 100%;
+    height: 100vh;
     display:flex;
     justify-content:center;
     align-items:center;
+    background-image:
+        url("planodefundo.jpeg");
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
 }
-
 .container-centro {
     text-align: center;
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
-
 .container-centro h1 {
     font-size: 3rem;
     margin-bottom: 20px;
 }
-
 .card-login{
     width:420px;
     padding:40px;
-
     display:flex;
     flex-direction:column;
     gap:18px;
-
     border-radius:20px;
-
     background:rgba(20,20,20,.82);
     backdrop-filter:blur(12px);
-
     border:2px solid #8a2be2;
     box-shadow:0 0 35px rgba(170,16,241,.45);
 }
@@ -84,13 +74,10 @@ input{
     padding:15px;
     border:none;
     border-radius:12px;
-
     background:#2b2b2b;
     color:#fff;
-
     font-size:1rem;
     outline:none;
-
     transition:.3s;
 }
 
@@ -108,12 +95,11 @@ input:focus{
     border-radius: 20px;
     border: none;
     font-size: 1.5rem;
-
     background-color: #6f00ff;
     color: white;
     cursor: pointer;
     font-weight: bold;
-    transition: .3s;
+    
 }
 
 .btn-home:hover {
@@ -123,18 +109,13 @@ input:focus{
 
 .btn-login{
     padding:15px;
-
     border:none;
     border-radius:12px;
-
     background:linear-gradient(90deg,#6f00ff,#bb00ff);
-
     color:white;
     font-size:1.1rem;
     font-weight:bold;
-
     cursor:pointer;
-    transition:.3s;
 }
 
 .btn-login:hover{
@@ -152,3 +133,195 @@ input:focus{
     font-weight: 400;
     font-style: normal;
   }
+  .bg-store{
+    background:#111827;
+    min-height:100vh;
+    color:white;
+}
+.topo-loja{
+    height:80px;
+    background:#1b1b2f;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 40px;
+    box-shadow:0 5px 20px rgba(0,0,0,.4);
+}
+
+.logo-loja{
+
+    color:#aa10f1;
+    font-size:30px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+
+.pesquisa{
+
+    width:50%;
+    height:52px;
+    display:flex;
+    align-items:center;
+    background:#242424;
+    border:2px solid transparent;
+    border-radius:50px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.pesquisa:hover{
+
+    border-color:#8a2be2;
+    box-shadow:0 0 18px rgba(138,43,226,.3);
+}
+
+.lupa{
+
+    margin-left:18px;
+    font-size:20px;
+    color:#b46cff;
+}
+
+.pesquisa input{
+    flex:1;
+    background:none;
+    border:none;
+    outline:none;
+    color:white;
+    font-size:16px;
+    padding:0 15px;
+}
+
+.btn-pesquisar{
+    width:120px;
+    height:100%;
+    border:none;
+    cursor:pointer;
+    background:#8a2be2;
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-pesquisar:hover{
+
+    background:#a44fff;
+}
+.menu-direita{
+
+    display:flex;
+    gap:15px;
+}
+
+.icone{
+
+    position:relative;
+    width:55px;
+    height:55px;
+    border:none;
+    background:#252525;
+    color:white;
+    cursor:pointer;
+    font-size:24px;
+    transition:.15s;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.icone:hover{
+
+    background:#8a2be2;
+    transform:translateY(-3px) scale(1.08);
+    box-shadow:0 0 18px rgba(138,43,226,.5);
+}
+
+.contador{
+
+    position:absolute;
+    top:-4px;
+    right:-4px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:red;
+    color:white;
+    font-size:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+}
+.conteudo{
+
+    padding:40px;
+}
+
+.conteudo h1{
+
+    margin-bottom:30px;
+}
+.catalogo{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+.card-game{
+
+    background:#1d1d1d;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+    box-shadow:0 0 15px rgba(0,0,0,.5);
+}
+
+
+
+.card-game img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card-game h3{
+    margin:15px;
+}
+
+.card-game p{
+    margin:0 15px 15px;
+    color:#6cff6c;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.card-game button{
+    width:calc(100% - 30px);
+    margin:0 15px 20px;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#8a2be2;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card-game button:hover{
+    background:#a14dff;
+}
+.icone i{
+    font-size:22px;
+}
+
+.lupa i{
+    font-size:18px;
+    color:#b46cff;
+}
+
+.btn-pesquisar i{
+    font-size:18px;
+}
