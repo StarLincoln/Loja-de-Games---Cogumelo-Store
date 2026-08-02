@@ -3,12 +3,16 @@ import { jsonRepositories } from "../repositories/jsonRepositories"
 import { Produto } from "../entities/produto"
 
 export const apiRouter = Router()
-const repo = new jsonRepositories("../dados/produto.json", Produto.fromJson)
+const repo = new jsonRepositories("./dados/produto.json")
 
 apiRouter.get("/api/", async (req: Request, res: Response) => {
     try{
         const produtos = await repo.listarTodos()
-        res.json(produtos)
+
+        console.log(produtos);
+        console.log(produtos.map(p => p.toJson()));
+
+        res.json(produtos.map(p => p.toJson()))
     }catch(erro){
         res.status(500).json({erro: "Erro ao listar o Produto"})
     }
@@ -18,20 +22,18 @@ apiRouter.get("/api/:id", async (req: Request, res: Response) => {
         const id = Number(req.params.id)
         const produto = await repo.buscarPorId(id)
 
-        if(!produto) return res.status(404).json({erro : "Produto não encontrado"})
-
         res.json(produto)
     } catch(erro){
-       res.status(500).json({ erro : "Erro ao buscar Produto"}) 
+       res.status(404).json({ erro : "Erro ao buscar Produto"}) 
     }
 })
 apiRouter.post("/api/produtos", async (req: Request, res: Response) => {
     try{
-        const produtos = await repo.listarTodos()
-        const idMax = produtos.reduce((max, num) => Math.max(max, num._id), 0)
+        const produtos = await repo.listarTodos() || []
+        const idMax = Number(produtos.reduce((max, num) => Math.max(max, num.id), 0)) + 1
 
         const {nome, preco, lancamento, plataforma, avaliacao} = req.body
-        const add = new Produto(idMax+1, nome, preco, lancamento, plataforma, avaliacao)
+        const add = new Produto(idMax, nome, preco, lancamento, plataforma, avaliacao)
 
         await repo.criarItem(add)
         res.status(201).json(add)

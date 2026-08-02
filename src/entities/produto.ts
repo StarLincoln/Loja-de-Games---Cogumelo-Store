@@ -1,16 +1,31 @@
 export interface IEntidade {
   id: number;
+  toJson(): object;
 }
 
 export class Produto implements IEntidade {
+  private _id: number;
+  private _nome: string;
+  private _preco: number;
+  private _lancamento: number;
+  private _plataforma: string;
+  private _avaliacao: number | null
+
   constructor(
-    public _id: number,
-    private _nome: string,
-    private _preco: number,
-    private _lancamento: number,
-    private _plataforma: string,
-    private _avaliacao: number | null,
-  ) {}
+    id: number,
+    nome: string,
+    preco: number,
+    lancamento: number,
+    plataforma: string,
+    avaliacao: number | null,
+  ) {
+    this._id = id;
+    this._nome = nome;
+    this._preco = preco;
+    this._lancamento = lancamento;
+    this._plataforma = plataforma;
+    this._avaliacao = avaliacao;
+  }
 
   get id(): number {
     return this._id;
