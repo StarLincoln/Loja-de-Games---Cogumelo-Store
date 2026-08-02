@@ -1,7 +1,5 @@
 import { writeFile, readFile } from "fs/promises";
 import { Produto } from "../entities/produto";
-import { json } from "stream/consumers";
-import { platform } from "os";
 
 export class jsonRepositories {
     constructor(

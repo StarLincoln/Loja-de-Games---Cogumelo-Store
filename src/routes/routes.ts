@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express"
-import { jsonRepositories } from "../repositories/jsonRepositories"
+import { jsonRepositories } from "../models/jsonRepositories"
 import { Produto } from "../entities/produto"
 
 export const apiRouter = Router()
