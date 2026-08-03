@@ -6,6 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <header><h1>Produtos views</h1></header>
+    <section>
+        <% link.forEach(p => { %>
+            <div>
+                <% if(p.foto) { %>
+                    <img src="<%= p.foto %>">
+                <% } %>
+                <h2><%= p.nome %> | <%= p.lancamento %></h1>
+                <h3>de <%= p.plataforma %></h3>
+                <h3>custa: <%= p.preco %></h3>
+                <h3>Nota: <%= p.avaliacao %>/5</h3>
+            </div>
+        <% }) %>
+    </section>
 </body>
 </html>

@@ -38,7 +38,7 @@ export class jsonRepositories {
         dados.push(add)
         await this.salvar(dados)
     }
-    public async atualizarItem(id: number, add: {nome?: string; preco?: number; lancamento?: number; plataforma?: string; avaliacao?: number}): Promise<void>{
+    public async atualizarItem(id: number, add: {nome?: string; preco?: number; lancamento?: number; plataforma?: string; avaliacao?: number; foto?: string}): Promise<void>{
         const dados: Produto[] = await this.carregar()
 
         const item = dados.find(i => i.id === id)
@@ -49,6 +49,7 @@ export class jsonRepositories {
         if(add.lancamento !== undefined) item.lancamento = add.lancamento
         if(add.plataforma !== undefined) item.plataforma = add.plataforma
         if(add.avaliacao !== undefined) item.avaliacao = add.avaliacao
+        if(add.foto !== undefined) item.foto = add.foto
 
         await this.salvar(dados)
     }

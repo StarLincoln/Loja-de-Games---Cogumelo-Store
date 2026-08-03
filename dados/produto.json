@@ -5,6 +5,24 @@
     "preco": 29.99,
     "lancamento": 2010,
     "plataforma": "Celular",
-    "avaliacao": 5
+    "avaliacao": 5,
+    "foto": null
+  },
+  {
+    "id": 2,
+    "nome": "Baldurs Gate",
+    "preco": 199,
+    "lancamento": 2024,
+    "plataforma": "Computador",
+    "avaliacao": 5,
+    "foto": "/uploads/1785718282305-161.jpg"
+  },
+  {
+    "id": 3,
+    "nome": "Ace Attorney - Apollo Justice",
+    "preco": 213,
+    "lancamento": 2007,
+    "avaliacao": 4,
+    "foto":"/uploads/1785718282305-162.png"
   }
 ]

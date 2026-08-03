@@ -1,6 +1,7 @@
 import { Router, Request, Response } from "express"
 import { jsonRepositories } from "../models/jsonRepositories"
 import { Produto } from "../entities/produto"
+import { upload } from "../middlewares/upload"
 
 export const apiRouter = Router()
 const repo = new jsonRepositories("./dados/produto.json")
@@ -8,9 +9,6 @@ const repo = new jsonRepositories("./dados/produto.json")
 apiRouter.get("/api/", async (req: Request, res: Response) => {
     try{
         const produtos = await repo.listarTodos()
-
-        console.log(produtos);
-        console.log(produtos.map(p => p.toJson()));
 
         res.json(produtos.map(p => p.toJson()))
     }catch(erro){
@@ -27,13 +25,18 @@ apiRouter.get("/api/:id", async (req: Request, res: Response) => {
        res.status(404).json({ erro : "Erro ao buscar Produto"}) 
     }
 })
-apiRouter.post("/api/produtos", async (req: Request, res: Response) => {
+apiRouter.post("/api/produtos", upload.single("foto"), async (req: Request, res: Response) => {
     try{
         const produtos = await repo.listarTodos() || []
         const idMax = Number(produtos.reduce((max, num) => Math.max(max, num.id), 0)) + 1
 
-        const {nome, preco, lancamento, plataforma, avaliacao} = req.body
-        const add = new Produto(idMax, nome, preco, lancamento, plataforma, avaliacao)
+        const {nome, plataforma} = req.body
+        const preco = Number(req.body.preco)
+        const lancamento = Number(req.body.lancamento) 
+        const avaliacao = Number(req.body.avaliacao)
+        const foto = req.file ? `/uploads/${req.file.filename}` : null;
+
+        const add = new Produto(idMax, nome, preco, lancamento, plataforma, avaliacao, foto)
 
         await repo.criarItem(add)
         res.status(201).json(add)
