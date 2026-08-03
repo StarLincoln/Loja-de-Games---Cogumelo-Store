@@ -1,16 +1,34 @@
 export interface IEntidade {
   id: number;
+  toJson(): object;
 }
 
 export class Produto implements IEntidade {
+  private _id: number;
+  private _nome: string;
+  private _preco: number;
+  private _lancamento: number;
+  private _plataforma: string;
+  private _avaliacao: number | null;
+  private _foto: string | null
+
   constructor(
-    public _id: number,
-    private _nome: string,
-    private _preco: number,
-    private _lancamento: number,
-    private _plataforma: string,
-    private _avaliacao: number | null,
-  ) {}
+    id: number,
+    nome: string,
+    preco: number,
+    lancamento: number,
+    plataforma: string,
+    avaliacao: number | null = null,
+    foto: string | null = null
+  ) {
+    this._id = id;
+    this._nome = nome;
+    this._preco = preco;
+    this._lancamento = lancamento;
+    this._plataforma = plataforma;
+    this._avaliacao = avaliacao;
+    this._foto = foto
+  }
 
   get id(): number {
     return this._id;
@@ -29,6 +47,9 @@ export class Produto implements IEntidade {
   }
   get avaliacao(): number | null {
     return this._avaliacao;
+  }
+  get foto(): string | null {
+    return this._foto;
   }
 
   set nome(dado: string) {
@@ -52,6 +73,10 @@ export class Produto implements IEntidade {
   set avaliacao(dado: number | null) {
     this._avaliacao = dado;
   }
+  set foto(valor: string | null) {
+    this._foto = valor;
+  }
+
   static fromJson(json: any): Produto {
     return new Produto(
       json.id,
@@ -60,6 +85,7 @@ export class Produto implements IEntidade {
       json.lancamento,
       json.plataforma,
       json.avaliacao ?? null,
+      json.foto  ?? null
     );
   }
   toJson(): object {
@@ -70,6 +96,7 @@ export class Produto implements IEntidade {
       lancamento: this._lancamento,
       plataforma: this._plataforma,
       avaliacao: this._avaliacao,
+      foto: this._foto
     };
   }
 }
