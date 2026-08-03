@@ -120,9 +120,16 @@ input:focus{
 }
   
 .bg-store{
-    background:#111827;
-    min-height:100vh;
-    color:white;
+    background-color: #111827; 
+    
+    background-image: url("papel\ de\ paredes\ da\ loja.jpg"); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    min-height: 100vh;
+    color: white;
 }
 .topo-loja{
     height:80px;
@@ -294,4 +301,15 @@ input:focus{
 
 .btn-pesquisar i{
     font-size:18px;
+}
+.info-usuario {
+    color: #b46cff;
+    font-size: 14px;
+    font-weight: bold;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: -5px;
+    margin-right: 10px;
 }

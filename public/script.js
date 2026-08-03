@@ -53,3 +53,20 @@ if (btnSair) {
         window.location.href = "index.html";
     });
 }
+const spanNomeUsuario = document.getElementById("nome-usuario");
+
+if (spanNomeUsuario) {
+    const emailSalvo = localStorage.getItem("email");
+    
+    if (emailSalvo) {
+        const nomeUsuario = emailSalvo.split("@")[0];
+        spanNomeUsuario.textContent = "Olá, " + nomeUsuario;
+        
+        const btnPerfil = document.getElementById("btnPerfil");
+        if (btnPerfil) {
+            btnPerfil.title = "Logado como: " + emailSalvo;
+        }
+    } else {
+        spanNomeUsuario.textContent = "Visitante";
+    }
+}
