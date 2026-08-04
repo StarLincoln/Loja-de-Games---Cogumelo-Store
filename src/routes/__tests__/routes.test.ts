@@ -46,7 +46,8 @@ describe("POST /api/produtos", () => {
                 preco: 200,
                 lancamento: 2006,
                 plataforma: "Nintendo DS",
-                avaliacao: 9
+                avaliacao: 4,
+                foto: "foto"
             });
 
         expect(resposta.status).toBe(201);
@@ -63,7 +64,8 @@ describe("POST /api/produtos", () => {
                 preco: -100,
                 lancamento: 2006,
                 plataforma: "Nintendo DS",
-                avaliacao: 9
+                avaliacao: 4,
+                foto: "foto"
             });
 
         expect(resposta.status).toBe(400);

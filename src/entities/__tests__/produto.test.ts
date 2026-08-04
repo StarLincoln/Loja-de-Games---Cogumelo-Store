@@ -9,7 +9,8 @@ describe("Constructor", () => {
             200,
             2006,
             "Nintendo DS",
-            9
+            4,
+            "foto"
         );
 
         expect(produto.id).toBe(1);
@@ -17,7 +18,8 @@ describe("Constructor", () => {
         expect(produto.preco).toBe(200);
         expect(produto.lancamento).toBe(2006);
         expect(produto.plataforma).toBe("Nintendo DS");
-        expect(produto.avaliacao).toBe(9);
+        expect(produto.avaliacao).toBe(4);
+        expect(produto.foto).toBe("foto")
     });
 
     it("deve aceitar avaliação nula", () => {
@@ -27,12 +29,25 @@ describe("Constructor", () => {
             200,
             2006,
             "Nintendo DS",
-            null
+            null,
+            "foto"
         );
 
         expect(produto.avaliacao).toBeNull();
     });
+    it("deve aceitar foto nula", () => {
+        const produto = new Produto(
+            1,
+            "Pokémon Diamond",
+            200,
+            2006,
+            "Nintendo DS",
+            4,
+            null
+        );
 
+        expect(produto.foto).toBeNull();
+    });
 });
 
 
@@ -45,7 +60,8 @@ describe("Setter nome", () => {
             200,
             2006,
             "Nintendo DS",
-            9
+            4,
+            "foto"
         );
 
         produto.nome = "Pokémon Platinum";
@@ -60,7 +76,8 @@ describe("Setter nome", () => {
             200,
             2006,
             "Nintendo DS",
-            9
+            4,
+            "foto"
         );
 
         produto.nome = "  Pokémon Platinum  ";
@@ -75,7 +92,8 @@ describe("Setter nome", () => {
             200,
             2006,
             "Nintendo DS",
-            9
+            4,
+            "foto"
         );
 
         expect(() => {
@@ -90,7 +108,8 @@ describe("Setter nome", () => {
             200,
             2006,
             "Nintendo DS",
-            9
+            4,
+            "foto"
         );
 
         expect(() => {
@@ -110,7 +129,8 @@ describe("Setter preco", () => {
             200,
             2006,
             "Nintendo DS",
-            9
+            4,
+            "foto"
         );
 
         produto.preco = 300;
@@ -125,7 +145,8 @@ describe("Setter preco", () => {
             200,
             2006,
             "Nintendo DS",
-            9
+            4,
+            "foto"
         );
 
         expect(() => {
@@ -140,7 +161,8 @@ describe("Setter preco", () => {
             200,
             2006,
             "Nintendo DS",
-            9
+            4,
+            "foto"
         );
 
         expect(() => {
@@ -160,7 +182,8 @@ describe("Setter lancamento", () => {
             200,
             2006,
             "Nintendo DS",
-            9
+            4,
+            "foto"
         );
 
         produto.lancamento = 2007;
@@ -175,7 +198,8 @@ describe("Setter lancamento", () => {
             200,
             2006,
             "Nintendo DS",
-            9
+            4,
+            "foto"
         );
 
         expect(() => {
@@ -190,7 +214,8 @@ describe("Setter lancamento", () => {
             200,
             2006,
             "Nintendo DS",
-            9
+            4,
+            "foto"
         );
 
         const anoFuturo = new Date().getFullYear() + 1;
@@ -212,7 +237,8 @@ describe("Setter plataforma", () => {
             200,
             2006,
             "Nintendo DS",
-            9
+            4,
+            "foto"
         );
 
         produto.plataforma = "Nintendo Switch";
@@ -227,7 +253,8 @@ describe("Setter plataforma", () => {
             200,
             2006,
             "Nintendo DS",
-            9
+            4,
+            "foto"
         );
 
         expect(() => {
@@ -247,12 +274,13 @@ describe("Setter avaliacao", () => {
             200,
             2006,
             "Nintendo DS",
-            9
+            4,
+            "foto"
         );
 
-        produto.avaliacao = 10;
+        produto.avaliacao = 5;
 
-        expect(produto.avaliacao).toBe(10);
+        expect(produto.avaliacao).toBe(5);
     });
 
     it("deve aceitar avaliação nula", () => {
@@ -262,12 +290,48 @@ describe("Setter avaliacao", () => {
             200,
             2006,
             "Nintendo DS",
-            9
+            4,
+            "foto"
         );
 
         produto.avaliacao = null;
 
         expect(produto.avaliacao).toBeNull();
+    });
+
+});
+describe("Setter avaliacao", () => {
+
+    it("deve alterar a foto", () => {
+        const produto = new Produto(
+            1,
+            "Pokémon Diamond",
+            200,
+            2006,
+            "Nintendo DS",
+            4,
+            "foto"
+        );
+
+        produto.foto = "foto, só que diferente";
+
+        expect(produto.avaliacao).toBe("foto, só que diferente");
+    });
+
+    it("deve aceitar foto nula", () => {
+        const produto = new Produto(
+            1,
+            "Pokémon Diamond",
+            200,
+            2006,
+            "Nintendo DS",
+            4,
+            "foto"
+        );
+
+        produto.foto = null;
+
+        expect(produto.foto).toBeNull();
     });
 
 });
@@ -282,7 +346,8 @@ describe("fromJson()", () => {
             preco: 200,
             lancamento: 2006,
             plataforma: "Nintendo DS",
-            avaliacao: 9
+            avaliacao: 4,
+            foto: "foto"
         };
 
         const produto = Produto.fromJson(json);
@@ -293,7 +358,7 @@ describe("fromJson()", () => {
         expect(produto.preco).toBe(200);
         expect(produto.lancamento).toBe(2006);
         expect(produto.plataforma).toBe("Nintendo DS");
-        expect(produto.avaliacao).toBe(9);
+        expect(produto.avaliacao).toBe(4);
     });
 
     it("deve transformar avaliação ausente em null", () => {
@@ -309,6 +374,20 @@ describe("fromJson()", () => {
 
         expect(produto.avaliacao).toBeNull();
     });
+    it("deve transformar foto ausente em null", () => {
+        const json = {
+            id: 1,
+            nome: "Pokémon Diamond",
+            preco: 200,
+            lancamento: 2006,
+            plataforma: "Nintendo DS",
+            avaliacao: 4
+        };
+
+        const produto = Produto.fromJson(json);
+
+        expect(produto.foto).toBeNull();
+    });
 
 });
 
@@ -322,7 +401,8 @@ describe("toJson()", () => {
             200,
             2006,
             "Nintendo DS",
-            9
+            4,
+            "foto"
         );
 
         expect(produto.toJson()).toEqual({
@@ -331,7 +411,8 @@ describe("toJson()", () => {
             preco: 200,
             lancamento: 2006,
             plataforma: "Nintendo DS",
-            avaliacao: 9
+            avaliacao: 4,
+            foto: "foto"
         });
     });
 
