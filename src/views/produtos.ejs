@@ -1,24 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cogumelo Store - Loja</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header><h1>Produtos views</h1></header>
-    <section>
-        <% link.forEach(p => { %>
-            <div>
-                <% if(p.foto) { %>
-                    <img src="<%= p.foto %>">
-                <% } %>
-                <h2><%= p.nome %> | <%= p.lancamento %></h1>
-                <h3>de <%= p.plataforma %></h3>
-                <h3>custa: <%= p.preco %></h3>
-                <h3>Nota: <%= p.avaliacao %>/5</h3>
-            </div>
-        <% }) %>
-    </section>
+<body class="bg-store">
+
+    <header class="topo-loja">
+
+        <div class="logo-loja">
+             <span>Cogumelo Store</span>
+        </div>
+
+        <form class="pesquisa" onsubmit="return false;">
+
+            <span class="lupa">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+        
+            <input type="text" id="busca" placeholder="Pesquisar jogos...">
+        
+            <button type="submit" class="btn-pesquisar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            
+            <button type="button" class="icone" id="btnSair" title="Sair">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
+        </form>
+
+        <div class="menu-direita">
+
+            <button class="icone" title="Carrinho">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="contador">0</span>
+            </button>
+        
+            <button class="icone" title="Favoritos">
+                <i class="fa-solid fa-heart"></i>
+            </button>
+        
+            <button class="icone" id="btnPerfil" title="Perfil">
+                <i class="fa-solid fa-user"></i>
+            </button>
+            <span id="nome-usuario" class="info-usuario">Carregando</span>
+        
+        </div>
+
+    </header>
+
+    <main class="conteudo">
+
+        <h1>Destaques</h1>
+
+        <section class="catalogo">
+            <% link.forEach( p => {%>
+                <div class="card-game">
+                    <img src="<%= p.foto || "/uploads/Undefined.webp" %>" alt="Capa do jogo <%= p.nome %>">
+                    <h3><%= p.nome %> | <%= p.lancamento %></h3>
+                    <p>para: <%= p.plataforma%> </p>
+                    <p>R$ <%= p.preco %></p>
+                    <p>
+                        nota: <% for(let i = 1; i <= 5; i++) { %>
+                            <% if(p.avaliacao > i){ %>
+                                ★
+                            <% } else { %>
+                                ☆
+                            <% } %>
+                        <% } %>
+                    </p>
+                    <button>Comprar</button>
+                </div>
+            <% }) %>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>

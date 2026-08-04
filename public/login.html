@@ -8,12 +8,12 @@
 </head>
 
 <body class="bg-login">
-    <form id="formLogin" class="card-login" onsubmit="return false;">
+    <form id="formLogin" class="card-login" action="/login" method="post">
         <h2>Entrar na Conta</h2>
 
-        <input type="email" id="email" placeholder="E-Mail" required>
+        <input type="email" id="email" placeholder="E-Mail" required name="email">
 
-        <input type="password" id="senha" placeholder="Senha" required>
+        <input type="password" id="senha" placeholder="Senha" required  name="senha">
 
         <button type="submit" id="btnAutenticar" class="btn-login">
             Entrar na Loja

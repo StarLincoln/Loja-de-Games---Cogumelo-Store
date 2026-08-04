@@ -5,3 +5,5 @@ declare module "express-session" {
         usuarioId?: number;
     }
 }
+
+export {}
