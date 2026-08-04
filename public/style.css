@@ -121,8 +121,7 @@ input:focus{
   
 .bg-store{
     background-color: #111827; 
-    
-    background-image: url("papel\ de\ paredes\ da\ loja.jpg"); 
+    background-image: url("papel de paredes da loja.jpg"); 
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

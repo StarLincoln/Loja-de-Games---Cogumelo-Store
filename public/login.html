@@ -8,18 +8,17 @@
 </head>
 
 <body class="bg-login">
-
-    <div class="card-login">
+    <form id="formLogin" class="card-login" onsubmit="return false;">
         <h2>Entrar na Conta</h2>
 
-        <input type="email" placeholder="E-Mail">
+        <input type="email" id="email" placeholder="E-Mail" required>
 
-        <input type="password" placeholder="Senha">
+        <input type="password" id="senha" placeholder="Senha" required>
 
-        <button id="btnAutenticar" class="btn-login">
+        <button type="submit" id="btnAutenticar" class="btn-login">
             Entrar na Loja
         </button>
-    </div>
+    </form>
 
     <script src="script.js"></script>
 </body>

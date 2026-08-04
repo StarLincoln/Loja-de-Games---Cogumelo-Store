@@ -23,9 +23,8 @@ if (btnIrLogin) {
 const btnAutenticar = document.getElementById("btnAutenticar");
 
 if (btnAutenticar) {
-
-    const email = document.querySelector('input[type="email"]');
-    const senha = document.querySelector('input[type="password"]');
+    const email = document.getElementById("email");
+    const senha = document.getElementById("senha");
 
     btnAutenticar.addEventListener("click", () => {
 
@@ -33,7 +32,6 @@ if (btnAutenticar) {
             alert("Preencha o e-mail e a senha.");
             return;
         }
-
         localStorage.setItem("logado", "true");
         localStorage.setItem("email", email.value);
 
@@ -49,10 +47,10 @@ if (btnSair) {
     btnSair.addEventListener("click", () => {
         localStorage.removeItem("logado");
         localStorage.removeItem("email");
-    
         window.location.href = "index.html";
     });
 }
+
 const spanNomeUsuario = document.getElementById("nome-usuario");
 
 if (spanNomeUsuario) {

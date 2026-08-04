@@ -15,25 +15,22 @@
              <span>Cogumelo Store</span>
         </div>
 
-        <div class="pesquisa">
+        <form class="pesquisa" onsubmit="return false;">
 
             <span class="lupa">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </span>
         
-            <input
-                type="text"
-                placeholder="Pesquisar jogos..."
-            >
+            <input type="text" id="busca" placeholder="Pesquisar jogos...">
         
-            <button class="btn-pesquisar">
+            <button type="submit" class="btn-pesquisar">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
             
-            <button class="icone" id="btnSair" title="Sair">
+            <button type="button" class="icone" id="btnSair" title="Sair">
                 <i class="fa-solid fa-right-from-bracket"></i>
             </button>
-        </div>
+        </form>
 
         <div class="menu-direita">
 
@@ -49,7 +46,7 @@
             <button class="icone" id="btnPerfil" title="Perfil">
                 <i class="fa-solid fa-user"></i>
             </button>
-            <span id="nome-usuario" class="info-usuario">Carregando...</span>
+            <span id="nome-usuario" class="info-usuario">Carregando</span>
         
         </div>
 
