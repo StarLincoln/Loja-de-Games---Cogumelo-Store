@@ -37,10 +37,6 @@ npm install
 npm run dev
 ```
 
-### ScreenShots
-
-### Tabela de Rotas
-
 ### Tecnologias Utilizadas
 | Áreas | Tecnoligas |
 | :---------- | -----: |
@@ -48,11 +44,7 @@ npm run dev
 | Back-End | TypeScript, Express, JSON, Jest, Bcrypt |
 | Banco de Dados | JSON |
 | Versionamento | GitHub, Git |
-### Como Exetucar 
-DESENVOLVIMENTO
 
 ### ScreenShots
-DESENVOLVIMENTO
 
-### Rotas
-DESENVOLVIMENTO
+### Tabela de Rotas

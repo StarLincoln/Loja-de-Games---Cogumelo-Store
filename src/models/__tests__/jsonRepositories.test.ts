@@ -13,7 +13,8 @@ const criarProduto = () => {
         200,
         2006,
         "Nintendo DS",
-        9
+        9,
+        "foto"
     );
 };
 
