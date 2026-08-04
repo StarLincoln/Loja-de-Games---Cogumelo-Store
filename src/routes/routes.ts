@@ -53,7 +53,7 @@ apiRouter.put("/api/produtos/:id", async (req: Request, res: Response) => {
 
         res.json({mensagem: "Produto Atualizado"})
     } catch (erro) {
-        res.status(500).json({erro : "Não foi possível atualizar o produto"})
+        res.status(400).json({erro : "Não foi possível atualizar o produto"})
     }
 })
 apiRouter.delete("/api/produtos/:id", async (req: Request, res: Response) => {
