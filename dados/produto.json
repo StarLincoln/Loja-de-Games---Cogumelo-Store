@@ -1,29 +1,65 @@
 [
   {
     "id": 1,
-    "nome": "Minecraft",
-    "preco": 29.99,
-    "lancamento": 2010,
-    "plataforma": "Celular",
-    "avaliacao": 5,
-    "foto": null
+    "nome": "The Legend of Zelda - Majoras Mask",
+    "preco": 249.99,
+    "lancamento": 2000,
+    "plataforma": "Nintendo 64",
+    "avaliacao": 4.9,
+    "foto": "/uploads/1786080327583-476.png"
   },
   {
     "id": 2,
-    "nome": "Baldurs Gate",
-    "preco": 199,
-    "lancamento": 2024,
-    "plataforma": "Computador",
-    "avaliacao": 5,
-    "foto": "/uploads/1785718282305-161.jpg"
+    "nome": "Star Fox 64",
+    "preco": 220,
+    "lancamento": 2000,
+    "plataforma": "Nintendo 64",
+    "avaliacao": 3.9,
+    "foto": "/uploads/1786080438186-200.png"
   },
   {
     "id": 3,
+    "nome": "Super Mario 64",
+    "preco": 99.9,
+    "lancamento": 1996,
+    "plataforma": "Nintendo 64",
+    "avaliacao": 4.9,
+    "foto": "/uploads/1786080042652-699.jpg"
+  },
+  {
+    "id": 4,
+    "nome": "Pokemon Fire Red",
+    "preco": 59.9,
+    "lancamento": 2004,
+    "plataforma": "Game Boy Advanced",
+    "avaliacao": 4.5,
+    "foto": "/uploads/1786079892298-278.jpg"
+  },
+  {
+    "id": 5,
     "nome": "Ace Attorney - Apollo Justice",
-    "preco": 213,
+    "preco": 213.99,
     "lancamento": 2007,
     "plataforma": "Nintendo DS",
     "avaliacao": 4,
     "foto": "/uploads/1785718282305-162.png"
+  },
+  {
+    "id": 7,
+    "nome": "Baldur's Gate 3",
+    "preco": 199.99,
+    "lancamento": 2023,
+    "plataforma": "Playstation 5",
+    "avaliacao": 4.4,
+    "foto": "/uploads/1785718282305-161.jpg"
+  },
+  {
+    "id": 6,
+    "nome": "Minecraft",
+    "preco": 29.99,
+    "lancamento": 2012,
+    "plataforma": "XBOX One",
+    "avaliacao": 4.3,
+    "foto": null
   }
 ]

@@ -7,7 +7,6 @@ export const authRouter = Router();
 
 const repository = new UsuarioRepository();
 
-let id = 1;
 
 authRouter.post("/register", async (req: Request, res: Response) => {
   try {
@@ -29,9 +28,7 @@ authRouter.post("/register", async (req: Request, res: Response) => {
 
     const senhaHash = await bcrypt.hash(senha, 10);
 
-    const usuario = new Usuario(id++, email, senhaHash);
-
-    await repository.criar(usuario);
+    await repository.criar(email, senhaHash);
 
     return res.status(201).json({
       mensagem: "Usuário criado com sucesso",

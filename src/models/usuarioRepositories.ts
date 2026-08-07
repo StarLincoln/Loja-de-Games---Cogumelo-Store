@@ -3,7 +3,7 @@ import path from "path"
 import { Usuario } from "../entities/usuario"
 
 export class UsuarioRepository {
-    private caminhoArquivo = "../../dados/usuarios.json"
+    private caminhoArquivo = "./dados/usuarios.json"
 
     private async carregarUsuarios(): Promise<Usuario[]> {
         try {
@@ -26,8 +26,12 @@ export class UsuarioRepository {
         )
     }
 
-    async criar(usuario: Usuario): Promise<Usuario> {
+    async criar(email: string, senha: string): Promise<Usuario> {
         const usuarios = await this.carregarUsuarios()
+        const idMax = Number(usuarios.reduce((pre, cur) => Math.max(pre, cur.id), 0)) + 1
+
+        const usuario = new Usuario(idMax, email, senha)
+
         usuarios.push(usuario)
         await this.salvarUsuarios(usuarios)
 
